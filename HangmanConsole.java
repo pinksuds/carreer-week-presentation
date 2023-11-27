@@ -79,7 +79,7 @@ public class HangmanConsole {
 
     private final Scanner scanner = new Scanner(System.in);
 
-    public void startGame() {
+    public void launchGame() {
         int gameLoop = 0;
 
 
