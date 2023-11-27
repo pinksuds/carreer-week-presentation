@@ -86,7 +86,7 @@ public class HangmanConsole {
         while (true) {
             switch (gameLoop) {
                 case 0:
-                    System.out.println("//////// HANGMAN CONSOLE ////////");
+                    System.out.println("////////// HANGMAN CONSOLE //////////");
                     System.out.println("1. Start game.");
                     System.out.println("2. Exit.");
                     gameLoop = getIntInput();
@@ -100,7 +100,7 @@ public class HangmanConsole {
                     boolean hasWon = false;
 
                     while (true) {
-                        System.out.println("--------------------------------");
+                        System.out.println("-------------------------------------");
                         System.out.println(hangmanStates[5 - lives]);
                         System.out.println("WORD: " + arrayToString(wordArray));
                         char guess = Character.toUpperCase(getCharInput());
@@ -111,23 +111,29 @@ public class HangmanConsole {
                         }
 
                         if (lives == 0) {
+                            System.out.println("-------------------------------------");
+                            System.out.println(hangmanStates[5 - lives]);
+                            System.out.println("WORD: " + arrayToString(wordArray));
                             break;
                         }
 
                         if (checkIfWon(wordArray)) {
+                            System.out.println("-------------------------------------");
+                            System.out.println(hangmanStates[5 - lives]);
+                            System.out.println("WORD: " + arrayToString(wordArray));
                             hasWon = true;
                             break;
                         }
                     }
 
                     if (hasWon) {
-                        System.out.println("--------------------------------");
-                        System.out.println("You won! :)");
-                        System.out.println("WORD: " + wordToGuess);
+                        System.out.println("-------------------------------------");
+                        System.out.println("You won亗! You're literally so good. :)");
+                        System.out.println("The WORD was: " + wordToGuess);
                     } else {
-                        System.out.println("--------------------------------");
-                        System.out.println("You lost. :(");
-                        System.out.println("WORD: " + wordToGuess);
+                        System.out.println("-------------------------------------");
+                        System.out.println("Awwwwwh snap! You lost. :(");
+                        System.out.println("The WORD was: " + wordToGuess);
                     }
 
                     System.out.println();
@@ -137,7 +143,7 @@ public class HangmanConsole {
                     break;
 
                 case 2:
-                    System.out.println("--------------------------------");
+                    System.out.println("-------------------------------------");
                     System.out.println("Have a great day!");
                     System.exit(1);
 
