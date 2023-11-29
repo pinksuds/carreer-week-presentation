@@ -93,7 +93,7 @@ public class HangmanConsole {
                     break;
 
                 case 1:
-                    int lives = 5;
+                    int mistakes = 0;
                     String wordToGuess = getRandomWord();
                     char[] wordArray = new char[wordToGuess.length()];
                     populateArray(wordArray);
@@ -101,25 +101,25 @@ public class HangmanConsole {
 
                     while (true) {
                         System.out.println("-------------------------------------");
-                        System.out.println(hangmanStates[5 - lives]);
+                        System.out.println(hangmanStates[mistakes]);
                         System.out.println("WORD: " + arrayToString(wordArray));
                         char guess = Character.toUpperCase(getCharInput());
                         boolean isCorrect = checkGuess(guess, wordToGuess, wordArray);
 
                         if (!isCorrect) {
-                            lives--;
+                            mistakes++;
                         }
 
-                        if (lives == 0) {
+                        if (mistakes == 5) {
                             System.out.println("-------------------------------------");
-                            System.out.println(hangmanStates[5 - lives]);
+                            System.out.println(hangmanStates[mistakes]);
                             System.out.println("WORD: " + arrayToString(wordArray));
                             break;
                         }
 
                         if (checkIfWon(wordArray)) {
                             System.out.println("-------------------------------------");
-                            System.out.println(hangmanStates[5 - lives]);
+                            System.out.println(hangmanStates[mistakes]);
                             System.out.println("WORD: " + arrayToString(wordArray));
                             hasWon = true;
                             break;
