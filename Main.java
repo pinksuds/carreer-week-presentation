@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        TextGame game = new TextGame();
+        HangmanConsole game = new HangmanConsole();
         game.launchGame();
     }
 }
